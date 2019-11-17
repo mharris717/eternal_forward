@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+require_relative "../lib/eternal_forward"
+
+args = (ARGV.join("") =~ /help/i) ? ["help","start_proxy"] : ['start_proxy'] + ARGV
+EternalForward::CLI.start(args)
