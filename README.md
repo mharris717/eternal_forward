@@ -4,7 +4,7 @@ Manage a `kubectl port-forward`, and renew it if the connection dies. The `kubec
 
 This is nice for situations where you want to keep a `port-forward` up for a long time and not deal with restarting it. For example, if you update the kube deployment (which deletes the pod you're currently forwarding to), things will transparently continue to work. EternalForward will detect that the old connection is gone, and spawn one to a new pod.
 
-Currently this only works to view served web pages from the pod.
+Currently this only works to view served web pages from the pod. The first time someone is interested in using this but can't due to this limitation, I'll happily enhance it to be a proper proxy. It was just too enticing to use `open-uri` and pass a string around to get a POC up.
 
 Run `eternal_forward APP` to start it, where APP is the `app` label of your kube deployment. It will pick a running pod to forward to.
 
