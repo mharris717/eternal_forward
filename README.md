@@ -1,39 +1,7 @@
 # EternalForward
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/eternal_forward`. To experiment with that code, run `bin/console` for an interactive prompt.
+Manage a `kubectl port-forward`, and renew it if the connection dies. Currently this only works to view served web pages from the pod.
 
-TODO: Delete this and the text above, and describe your gem
+Run `eternal_forward APP` to start it, where APP is the `app` label of your kube deployment. It will pick a running pod to forward to.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'eternal_forward'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install eternal_forward
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/eternal_forward.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The pod will be available by default at port 5555. Run `eternal_forward help` to see options.
